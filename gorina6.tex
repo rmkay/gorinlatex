@@ -1,12 +1,29 @@
-\documentclass{book}
+\documentclass[paper=a6]{book}
 \usepackage[english]{babel}%
+\input{classicthesis-config}
 \usepackage[a6paper]{geometry}% http://ctan.org/pkg/geometry
-
 \begin{document}
 
 \pagestyle{plain}
 \setcounter{secnumdepth}{-1} 
 \setlength{\parindent}{0cm}
+
+%*******************************************************
+% Table of Contents
+%*******************************************************
+%\phantomsection
+\refstepcounter{dummy}
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+%\setcounter{tocdepth}{2} % <-- 2 includes up to subsections in the ToC
+\setcounter{secnumdepth}{0} % <-- 3 numbers up to subsubsections
+\manualmark
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\tableofcontents 
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+%********************************************************
+
 
 \include{introduction}
 \include{water}
