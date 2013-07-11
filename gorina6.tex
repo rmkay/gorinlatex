@@ -2,12 +2,13 @@
 \usepackage[english]{babel}%
 \input{classicthesis-config}
 \usepackage[a6paper]{geometry}% http://ctan.org/pkg/geometry
+
+\hyphenation{wea-pon-ry}
 \begin{document}
 
-\pagestyle{plain}
+\pagestyle{empty}
 \setcounter{secnumdepth}{-1} 
 \setlength{\parindent}{0cm}
-
 %*******************************************************
 % Table of Contents
 %*******************************************************
@@ -15,17 +16,23 @@
 \refstepcounter{dummy}
 \pdfbookmark[1]{\contentsname}{tableofcontents}
 %\setcounter{tocdepth}{2} % <-- 2 includes up to subsections in the ToC
-\setcounter{secnumdepth}{0} % <-- 3 numbers up to subsubsections
 \manualmark
 \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\clearpage
 \tableofcontents 
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\cleardoublepage
 \automark[section]{chapter}
 \renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
 %********************************************************
-
+\pagestyle{plain}
+\cftsetindents{chapter}{1.5in}{2.3in}
 
 \include{introduction}
+\setcounter{secnumdepth}{0} 
+\cftsetindents{chapter}{0in}{1.5in}
+\include{ground}
 \include{water}
 \include{fire}
 \include{wind}
