@@ -2,13 +2,16 @@
 \usepackage[english]{babel}%
 \input{classicthesis-config}
 \usepackage[a6paper, left=1.8cm ]{geometry}% http://ctan.org/pkg/geometry
-
+\usepackage{verbatim}
 \hyphenation{wea-pon-ry}
 \begin{document}
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{-1} 
 \setlength{\parindent}{0cm}
+\write18{/bin/git rev-parse HEAD | fold -w 8 > githash.tex}
+\verbatiminput{githash.tex}
+
 %*******************************************************
 % Table of Contents
 %*******************************************************
