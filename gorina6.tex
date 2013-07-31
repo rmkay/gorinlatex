@@ -1,16 +1,69 @@
 \documentclass[paper=a6]{book}
 \usepackage[english]{babel}%
 \input{classicthesis-config}
-\usepackage[a6paper, left=1.8cm ]{geometry}% http://ctan.org/pkg/geometry
+\usepackage[a6paper, left=1.6cm ]{geometry}% http://ctan.org/pkg/geometry
 \usepackage{verbatim}
+\usepackage{alltt}
+\usepackage{setspace}
+\usepackage{CJK}
 \hyphenation{wea-pon-ry}
 \begin{document}
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{-1} 
 \setlength{\parindent}{0cm}
+
 \write18{/bin/git rev-parse HEAD | fold -w 8 > githash.tex}
-\verbatiminput{githash.tex}
+
+
+%*******************************************************
+% cover
+%*******************************************************
+
+\vspace*{2cm}
+\begin{center}
+  \begin{CJK*}{UTF8}{mj}
+{\Huge 五 輪 書}
+  \end{CJK*}
+\end{center}
+\cleardoublepage
+%*******************************************************
+% dirt side
+%*******************************************************
+\begin{figure}
+\begin{alltt}
+\singlespacing
+\centering
+\texttt{\input{githash.tex}}
+\end{alltt}
+\end{figure}
+\clearpage
+
+\begin{center}
+\vspace*{1cm}
+This is a newly typeset copy of \\ 
+The Book of the Five Rings\\ 
+by Miyamoto Musashi,\\
+translated by Victor Harris.\\
+\vspace{2cm}
+Typesetting was done \\ 
+with the \LaTeX \\
+typesetting system.\\
+\vfill
+Fork it on Github:\\
+\texttt{https://github.com/rmkay/gorinlatex}\\
+
+
+\end{center}
+
+%*******************************************************
+% Titlepage
+%*******************************************************
+\title{\textbf{The Book of the Five Rings}}
+\author{Miyamoto Musashi}
+\date{}
+\maketitle
+
 
 %*******************************************************
 % Table of Contents
