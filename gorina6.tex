@@ -25,28 +25,20 @@
 % cover not needed, printed on stronger paper
 %*******************************************************
 
-%\vspace*{2cm}
-%\begin{center}
-%  \begin{CJK*}{UTF8}{min}
-%{\Huge 五 輪 書}
-%  \end{CJK*}
-%\end{center}
-%\cleardoublepage
+\vspace*{2cm}
+\begin{center}
+  \begin{CJK*}{UTF8}{min}
+      \textit{\textbf{{\Huge 五輪書}}}
+  \end{CJK*}
+\end{center}
+\cleardoublepage
 %*******************************************************
 % dirt side
 %*******************************************************
 \vspace*{2cm}
 \begin{center}
-\textit{for the amplified void}
+\textit{Lukas, check this out..}
 \end{center}
-\cleardoublepage
-\begin{figure}
-\begin{alltt}
-\singlespacing
-\centering
-\texttt{\input{githash.tex}}
-\end{alltt}
-\end{figure}
 \clearpage
 
 \begin{center}
@@ -55,14 +47,14 @@ This is a newly typeset copy of \\
 The Book of the Five Rings\\ 
 by Miyamoto Musashi,\\
 translated by Victor Harris.\\
-\vspace{2cm}
-Typesetting was done \\ 
-with the \LaTeX \\
-typesetting system.\\
+\begin{alltt}
+\singlespacing
+\centering
+\texttt{\input{githash.tex}}\let\thefootnote\relax\footnote{The alphanumerics represent the hash of the git revision this copy was compiled from.}
+\end{alltt}
 \vfill
-Get the source\footnote{The alphanumerics on the previous page are the hash of the git revision this copy was compiled from.} or fork it on Github:\\
-\texttt{https://github.com/rmkay/gorinlatex}\\
-
+Done with \LaTeX. Sources available at:\\
+\texttt{github.com/rmkay/gorinlatex}\\
 
 \end{center}
 
